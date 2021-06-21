@@ -1,0 +1,2 @@
+# Meerithm
+Python Algorithm Study
