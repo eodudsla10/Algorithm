@@ -1,5 +1,6 @@
 ## stack을 이용해 뽑은 인형을 쌓고 
-## 쌓기전 stack의 맨 위의 값과 비교후 같으면 삭제
+## 쌓기전 stack의 맨 위의 값과 비교후 같으면 삭제 다르면 삽입
+## 해당 board의 값은 0으로 변환 후 break를 통해 빠져나온다
 
 def solution(board,moves):
     stack = []
