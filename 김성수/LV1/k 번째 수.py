@@ -8,7 +8,6 @@ def solution(array , commands):
         a = array[c[0]-1:c[1]]
         a.sort()
         answer.append(a[c[2]-1])
-
     return answer
 
 array = [1, 5, 2, 6, 3, 7, 4]
