@@ -1,13 +1,12 @@
-#유클리드 호제법으로 풀기
-def gcd(n1, n2):
-    if n1 < n2:
-        (n1, n2) = (n2, n1)
+def gcdlcm(a, b):
+    c, d = max(a, b), min(a, b)
+    t = 1
+    while t > 0:
+        t = c % d
+        c, d = d, t
+    answer = [c, int(a*b/c)]
 
-    while n2 != 0:
-        (n1, n2) = (n2, n1 % n2)
+    return answer
 
-    return n1
-
-
-def solution(n, m):
-    return [gcd(n, m), (n * m) / gcd(n,m)]
+# 아래는 테스트로 출력해 보기 위한 코드입니다.
+print(gcdlcm(2,5))
