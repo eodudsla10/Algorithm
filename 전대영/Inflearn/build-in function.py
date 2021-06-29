@@ -12,7 +12,7 @@ msg="It is Time"
 print(msg.upper())
 print(msg)
 
-print(msg.find('t'))
+print(msg.find('t')) 
 print(msg.count('t'))
 
 for x in msg:
@@ -29,3 +29,4 @@ print()
 for x in msg:
     if x.isalpha():
         print(x, end='')
+
