@@ -7,15 +7,24 @@ def solution(participant, completion):
     # for cPerson in completion: # 한명씩 완주한사람을 참가자 리스트에서 지움
     #     participant.remove(cPerson) # 동명이인은 앞에있는 사람이름을 지움
     # answer = participant.pop()
+
+    # 1-1(100점)
+    participant.sort()
+    completion.sort()
+    for i in range(len(completion)): 
+        if participant[i] != completion[i]:
+            answer = participant[i]
+            return answer
+    return participant.pop()
     
     # 2(70점)
-    set_p = set(participant)
-    if len(set_p) == len(completion):
-        answer = max(participant, key=participant.count)
-    else:
-        set_c = set(completion)
-        check = list(set_p - set_c)
-        answer = check[0]
+    # set_p = set(participant)
+    # if len(set_p) == len(completion):
+    #     answer = max(participant, key=participant.count)
+    # else:
+    #     set_c = set(completion)
+    #     check = list(set_p - set_c)
+    #     answer = check[0]
     
     # 2-1
     # set_p = set(participant)
