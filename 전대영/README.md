@@ -7,7 +7,7 @@
 - [프로그래머스](https://programmers.co.kr/)
 - [python 100제](https://www.notion.so/Python-100-6ee1860ce29a41bc8eb6b9cfa7d7f06c)
 
-## 스터디 문제 풀이
+## 스터디 문제 풀이(프로그래머스)
 ### 210622
 - ~~자릿수 더하기~~
 - ~~수박수박수박수박수박수?~~
