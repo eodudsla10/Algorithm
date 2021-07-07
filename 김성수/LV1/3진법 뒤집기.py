@@ -17,4 +17,18 @@ def notation_3(n):
     n_3.append(n%3)
     return notation_3(n//3)
 
+
+
+
+## 다른 사람 풀이
+def solution(n):
+    tmp = ''
+    while n:
+        tmp += str(n % 3)
+        n = n // 3
+
+    answer = int(tmp, 3)
+    return answer
+
+
 print(solution(45))
