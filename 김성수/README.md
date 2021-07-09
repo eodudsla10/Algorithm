@@ -4,7 +4,6 @@
 ## 문제 풀이 사이트
 - [백준](https://www.acmicpc.net/)
 - [프로그래머스](https://programmers.co.kr/)
-- [python 100제](https://www.notion.so/Python-100-6ee1860ce29a41bc8eb6b9cfa7d7f06c)
 
 ## 스터디 문제 풀이(프로그래머스)
 ### 210622
