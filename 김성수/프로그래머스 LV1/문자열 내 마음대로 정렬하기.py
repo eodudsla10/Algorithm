@@ -1,7 +1,7 @@
 def solution(strings, n):
     answer = []
     string_n_list = []
-    for index,s in enumerate(strings):  
+    for s in strings:  
         sn=s[n]
         string_n_list.append((sn,s))
     string_n_list.sort()

@@ -1,5 +1,4 @@
 def solution(s):
-    answer = 0
     numbers = ['zero','one','two','three','four','five','six','seven','eight','nine']
     num = ''
     result = ''
@@ -17,3 +16,4 @@ def solution(s):
 s = "one4seveneight" 
 
 print(solution(s))
+
