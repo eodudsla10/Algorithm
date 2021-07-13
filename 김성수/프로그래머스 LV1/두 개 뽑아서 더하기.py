@@ -1,6 +1,5 @@
 from collections import deque
 
-
 def solution(numbers):
     answer = []
     q = deque()
