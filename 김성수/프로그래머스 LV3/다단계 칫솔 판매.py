@@ -1,3 +1,6 @@
+
+## 트리형태의 알고리즘 문제 
+
 def solution(enroll, referral, seller, amount):
     answer = []
     dic = {}
@@ -8,8 +11,8 @@ def solution(enroll, referral, seller, amount):
         else:
             dic[key]=value
         cost[key] = 0
-    print(dic)
-    print(cost)
+    # print(dic)
+    # print(cost)
 
     for s, a in zip(seller, amount):
         now_money = a*100
@@ -24,7 +27,7 @@ def solution(enroll, referral, seller, amount):
         # 조건이 안될 때 상위가 '-'이거면 스탑, 
 
         cost[s] += a * 0.9
-    print(cost)
+    # print(cost)
 
     for name in enroll:
         answer.append(int(cost[name]))
