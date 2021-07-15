@@ -32,9 +32,11 @@ import math
 def solution(left, right):
     answer = 0
     for i in range(left, right + 1, 1):
-        sqrt = math.sqrt(i)
+        sqrt = math.sqrt(i) 
+        ## 제곱근이 정수 2 
         if int(sqrt) == sqrt:
             answer -= i
+        ## 제곱근이 1.234
         else:
             answer += i
 
