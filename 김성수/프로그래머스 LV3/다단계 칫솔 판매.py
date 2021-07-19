@@ -11,8 +11,8 @@ def solution(enroll, referral, seller, amount):
         else:
             dic[key]=value
         cost[key] = 0
-    # print(dic)
-    # print(cost)
+    print(dic)
+    print(cost)
 
     for s, a in zip(seller, amount):
         now_money = a*100
