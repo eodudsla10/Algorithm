@@ -1,8 +1,8 @@
-
 ## 트리형태의 알고리즘 문제 
 
 def solution(enroll, referral, seller, amount):
     answer = []
+		# 다단계 관계를 저장할 dict
     dic = {}
     cost = {}
     for key, value in zip(enroll, referral):
