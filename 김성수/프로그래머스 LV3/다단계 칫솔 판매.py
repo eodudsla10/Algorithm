@@ -21,16 +21,16 @@ def solution(enroll, referral, seller, amount):
             # 조건이 안될 때 최상위가 '-'일 경우 스탑
             if now_name =='-':
                 break
-            
-
-
-        # 조건이 안될 때 상위가 '-'이거면 스탑, 
-
-        cost[s] += a * 0.9
+            if now_money//10 <1:
+                cost[now_name] +=now_money
+                break
+            cost[now_name]+=now_money-(now_money//10)      
+            now_money = now_money//10
+            now_name = dic[now_name]
     # print(cost)
 
     for name in enroll:
-        answer.append(int(cost[name]))
+        answer.append(cost[name])
     return answer
 
 enroll = ["john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"]
