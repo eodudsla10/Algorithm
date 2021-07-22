@@ -5,7 +5,6 @@ def solution(n):
             answer+=i
     return answer
 
-
 n = 12
 
 print(solution(n))

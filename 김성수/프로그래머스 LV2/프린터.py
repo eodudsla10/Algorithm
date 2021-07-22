@@ -8,8 +8,8 @@ def solution(priorities, location):
     for i in range(len(priorities)):
         pri.append((priorities[i],i))
         heapq.heappush(pri_max,(-priorities[i],i))
-    print(pri_max)
-    print(pri)
+    # print(pri_max)
+    # print(pri)
 
     p = pri.popleft()
     p_max = -heapq.heappop(pri_max)[0]
