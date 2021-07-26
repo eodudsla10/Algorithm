@@ -1,8 +1,8 @@
-
 ## 트리형태의 알고리즘 문제 
 
 def solution(enroll, referral, seller, amount):
     answer = []
+		# 다단계 관계를 저장할 dict
     dic = {}
     cost = {}
     for key, value in zip(enroll, referral):
@@ -11,8 +11,8 @@ def solution(enroll, referral, seller, amount):
         else:
             dic[key]=value
         cost[key] = 0
-    print(dic)
-    print(cost)
+    # print(dic)
+    # print(cost)
 
     for s, a in zip(seller, amount):
         now_money = a*100
@@ -21,16 +21,16 @@ def solution(enroll, referral, seller, amount):
             # 조건이 안될 때 최상위가 '-'일 경우 스탑
             if now_name =='-':
                 break
-            
-
-
-        # 조건이 안될 때 상위가 '-'이거면 스탑, 
-
-        cost[s] += a * 0.9
+            if now_money//10 <1:
+                cost[now_name] +=now_money
+                break
+            cost[now_name]+=now_money-(now_money//10)      
+            now_money = now_money//10
+            now_name = dic[now_name]
     # print(cost)
 
     for name in enroll:
-        answer.append(int(cost[name]))
+        answer.append(cost[name])
     return answer
 
 enroll = ["john", "mary", "edward", "sam", "emily", "jaimie", "tod", "young"]
