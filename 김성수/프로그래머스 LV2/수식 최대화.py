@@ -15,11 +15,11 @@ def solution(expression):
             숫자+=i
     else:
         e_copy.append(int(숫자))
-    print(set(연산자))
-    print(e_copy)
+    # print(set(연산자))
+    # print(e_copy)
     경우의수 = list(permutations(set(연산자),len(set(연산자))))
     
-    print(경우의수)
+    # print(경우의수)
     # print(e_list.index('-'))
 
     for i in 경우의수:
@@ -56,7 +56,7 @@ def solution(expression):
         if e_list[0] <0:
             e_list[0]*=-1
         answer.append(e_list[0])
-    print(answer)
+    # print(answer)
     return max(answer)
 
 
