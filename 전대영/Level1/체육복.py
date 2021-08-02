@@ -10,7 +10,7 @@ def solution(n, lost, reserve):
             set_lost.remove(i+1) 
     answer = n-len(set_lost)
     return answer
-
+  
 n = 5
 lost = [2,4]
 reserve = [1,3,5]
