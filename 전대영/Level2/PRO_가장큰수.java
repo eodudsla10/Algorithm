@@ -40,4 +40,3 @@ class PRO_가장큰수 {
 
 		return answer;
 	}
-}
