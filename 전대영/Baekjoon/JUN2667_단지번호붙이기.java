@@ -1,64 +1,82 @@
 package com.day18;
-
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
 
 public class JUN2667_단지번호붙이기 {
-    static int dx[] = {0,0,1,-1};
-    static int dy[] = {1,-1,0,0};
+	
+	static int n;// 지도 크기
+	static int[][] maps;
+	static boolean[][] visited;
+	
+	static int total=0; // 총 단지수
+	static int cnt;
+	static List<Integer> cnts = new ArrayList<>();// 각 단지에 속하는 집의 수
+	
+	// 8방 탐색 상 하 좌 우 좌상 우상 좌하 우아
+	static int[] dx = { -1, 1, 0, 0, -1, -1, 1, 1 };
+	static int[] dy = { 0, 0, -1, 1, -1, 1, -1, 1 };
 
-    static int D;
-    static int[][] map;
-    static boolean[][] visited;
-    static int[] apartment;
-    static int num = 0;
-    public static void solution() {
-        Scanner scanner = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        D = scanner.nextInt();
-        map = new int[D][D];
-        visited = new boolean[D][D];
-        apartment = new int[D * D];
+		String str = br.readLine();
+		n = Integer.parseInt(str);
+		
+		maps = new int[n][n];
+		visited = new boolean[n][n];
+		
+		for(int i=0; i<n; i++) {
+			str = br.readLine();
+			for(int j=0; j<n; j++) {
+				maps[i][j]=Integer.parseInt(str.split("")[j]);
+			}
+		}
+		// === 입력 끝=======
+		
+		// 탐색 + 단지 수 정해주기
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				cnt = 0;
+				if(maps[i][j]==1 && !visited[i][j]) {
+					total++;
+					cnt++;
+					dfs(i, j);
+					cnts.add(cnt);
+				}
+			}
+		}
+		
+		// 출력
+		System.out.println(total);
+		Collections.sort(cnts);
+		for(int i=0; i<cnts.size(); i++) {
+			System.out.println(cnts.get(i));
+		}
+		
+	}
+	
+	static void dfs(int cy, int cx) {
+		
+		visited[cy][cx] = true;
+		
+		int ny, nx;
+		for(int i=0; i<4; i++) {
+			ny = cy + dy[i];
+			nx = cx + dx[i];
+			
+			if(ny>=0 && ny<n && nx>=0 && nx<n) {
+				if(!visited[ny][nx] && maps[ny][nx]==1) {
+					cnt++;
+					dfs(ny, nx);
+				}
+			}
+		}
+		
+	}
 
-        for (int i = 0; i < map.length; i++) {
-            String str = scanner.next();
-            String[] tmp = str.split("");
-            for (int j = 0; j < map.length; j++) {
-                map[i][j] = Integer.parseInt(tmp[j]);
-            }
-        }
-
-        for (int i = 0; i < D; i++) {
-            for (int j = 0; j < D; j++) {
-                if (map[i][j] == 1 && !visited[i][j]) {
-                    num++;
-                    dfs(i, j);
-                }
-            }
-        }
-
-        Arrays.sort(apartment);
-
-        System.out.println(num);
-        for (int i = 0; i < apartment.length; i++) {
-            if (apartment[i] != 0) System.out.println(apartment[i]);
-        }
-
-    }
-
-    static void dfs(int x, int y) {
-        visited[x][y] = true;
-        apartment[num]++;
-
-        for (int i = 0; i < 4; i++) {
-            int nx = x + dx[i];
-            int ny = y + dy[i];
-
-            if (nx >= 0 && ny >= 0 && nx < D && ny < D) {
-                if (map[nx][ny] == 1 && !visited[nx][ny]) {
-                    dfs(nx, ny);
-                }
-            }
-        }
-    }
 }
