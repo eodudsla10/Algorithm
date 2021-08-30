@@ -1,4 +1,5 @@
 package com.day18;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -42,7 +43,7 @@ public class JUN2667_단지번호붙이기 {
 		for(int i=0; i<n; i++) {
 			for(int j=0; j<n; j++) {
 				cnt = 0;
-				if(maps[i][j]==1 && !visited[i][j]) {
+				if(maps[i][j]==1 && !visited[i][j]) {	//방문안했다가 참이다 -> 조건 실행
 					total++;
 					cnt++;
 					dfs(i, j);
