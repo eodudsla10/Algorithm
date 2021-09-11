@@ -1,32 +1,30 @@
 package com.day19;
 
-import java.util.Queue;
-import java.util.LinkedList;
- 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
- 
+import java.io.InputStreamReader;
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class JUN2164_카드2 {
  
-	public static void main(String[] args) throws IOException {
-		
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		Queue<Integer> q = new LinkedList<>();
-		
-		int N = Integer.parseInt(br.readLine());
-		
-		for(int i = 1; i <= N; i++) {
-			q.offer(i);
+		StringBuilder sb = new StringBuilder();
+		int n = Integer.parseInt(br.readLine());
+		Deque<Integer> q = new LinkedList<Integer>();
+		//queue에 넣기
+		for (int i = 1; i <= n; i++) {
+			q.add(i);
 		}
-		
-		
-		while(q.size() > 1) {
-			q.poll();	// 맨 앞의 원소 버림 
-			q.offer(q.poll());	// 맨 앞의 원소를 버림과 동시에 버려진 원소를 맨 뒤에 삽입 
+		while(true) {
+			if(q.size() == 1) {
+				sb.append(q.peek());
+				break;
+			}
+			q.poll();
+			q.add(q.poll());
 		}
-		
-		System.out.println(q.poll());	// 마지막으로 남은 원소 출력 
+		System.out.println(sb);
 	}
 }

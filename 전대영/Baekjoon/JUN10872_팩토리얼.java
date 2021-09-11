@@ -1,26 +1,29 @@
 package com.day19;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
- 
+import java.io.InputStreamReader;
+
 public class JUN10872_팩토리얼 {
- 
-	public static void main(String[] args) throws IOException {
- 
+	public static void main(String arg[]) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		int N = Integer.parseInt(br.readLine());
-		
-		int sum = factorial(N);
-		System.out.println(sum);
-		
+		int n = Integer.parseInt(br.readLine());
+		int result =1;
+		factory(n,result);
 	}
-	
-	public static int factorial(int N) {
-		if(N <= 1) return 1;	// 재귀 종료조건
-		return N * factorial(N - 1);		
+
+	public static void factory(int n, int result) {
+		if(n ==0) {
+			System.out.println(result);
+			return;
+		}
+			
+		if(n == 1) {
+			System.out.println(result);
+			return;
+		}
+		result*= n;
+		factory(n-1,result);
 	}
- 
 }
  
