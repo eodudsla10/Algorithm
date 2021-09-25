@@ -1,3 +1,3 @@
 # Meerithm
-Python Algorithm Study
+Python and JAVA Algorithm Study
 ## Movaxterm
