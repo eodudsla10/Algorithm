@@ -1,3 +1,4 @@
+package com.day24;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class Algo1_서울_11반_전대영 {
+public class JUN1755_숫자놀이 {
 
 	static String[] arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" };
 
@@ -36,7 +37,11 @@ public class Algo1_서울_11반_전대영 {
 		
 		//출력
 		for (int i = 0; i < list.size(); i++) {
-			if(i+1 ==10)	//10개 이상일때 줄바꿈
+			if(i ==0) {
+				sb.append(list.get(i).num).append(" ");
+				continue;
+			}
+			if(i%10==0)	//10개 이상일때 줄바꿈
 				sb.append("\n");
 			sb.append(list.get(i).num).append(" ");
 		}
