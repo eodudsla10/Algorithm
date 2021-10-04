@@ -20,6 +20,7 @@ public class SW1966_숫자를정렬하자 {
 			for(int i = 0; i < arr.length; i++) {
 				System.out.print(arr[i] + " ");
 			}
+			System.out.println();
 		}
 
 	}
