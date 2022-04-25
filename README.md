@@ -1,3 +1,5 @@
-# Meerithm
-Algorithm Study
+# Billionaire 스터디
+
+기간 : 2021년 6월 21일 ~ 2021년 11월 9일
+
 
